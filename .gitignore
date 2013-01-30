@@ -7,4 +7,5 @@ custom/*
 *.swp
 !custom/example.zshcache
 !custom/key-bindings.zsh
+!custom/osx.zsh
 cache/
