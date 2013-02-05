@@ -5,6 +5,7 @@ custom/*
 !custom/example
 !custom/example.zsh
 *.swp
+!custom/dev.zsh
 !custom/example.zshcache
 !custom/key-bindings.zsh
 !custom/osx.zsh
