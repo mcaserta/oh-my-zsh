@@ -2,7 +2,13 @@ current_path=`pwd`
 printf '\033[0;34m%s\033[0m\n' "Upgrading Oh My Zsh"
 cd $ZSH
 
-if git pull origin master
+if [[ -x /usr/local/bin/git ]]; then
+  __GIT='/usr/local/bin/git'
+else
+  __GIT='git'
+fi
+
+if $__GIT pull origin master
 then
   printf '\033[0;32m%s\033[0m\n' '         __                                     __   '
   printf '\033[0;32m%s\033[0m\n' '  ____  / /_     ____ ___  __  __   ____  _____/ /_  '
@@ -16,4 +22,5 @@ else
   printf '\033[0;31m%s\033[0m\n' 'There was an error updating. Try again later?'
 fi
 
+unset __GIT
 cd "$current_path"
